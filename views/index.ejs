@@ -5,15 +5,21 @@
     <link rel='stylesheet' href='/css/style.css' />
   </head>
   <body>
-    <h1>Add Todo</h1>
-    <form action="/" method="post">
-      <input required type="text" name="add" placeholder="Todo Title"/>
-      <input type="submit" value="Add"/>
-    </form>
-    <ul>
-      <% for(let todo of todos){ %>
-        <li><span><%= todo.content %></span></li>
-      <% } %>
-    </ul>
+    <header>
+      <h1>Node.js Todo App</h1>
+    </header>
+    <main>
+      <div class="container">
+      <form action="/" method="post">
+        <input required type="text" name="add" placeholder="Todo Title"/>
+        <input class="btn add" type="submit" value="Add"/>
+      </form>
+      <ul>
+        <% for(let todo of todos){ %>
+          <li><span><%= todo.content %></span></li>
+        <% } %>
+      </ul>
+      </div>
+    </main>
   </body>
 </html>

@@ -4,5 +4,147 @@
 
 body{
   font-family: $base_font;
-  color: $sub_color1;
+  color: $color-white;
+  background: $sub_color1;
+}
+/* header
+----------------------------------*/
+header {
+  width: 100%;
+  padding: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  background: $base_color;
+  color: #fff;
+  // box-shadow: 0px 3px 3px 3px rgba(44,57,75,.7);
+  position: relative;
+  @include for-size(phone-only) {
+    padding: 16px 0;
+  }
+  h1 {
+    font-size:32px;
+    margin-left: 24px;
+    @include for-size(phone-only) {
+      margin-left: 8px;
+      font-size: 32px;
+    }
+    a {
+      color: $color_gray;
+      text-decoration: none;
+    }
+  }
+  .sp-menu {
+    margin-left: auto;
+    display: none;
+    @include for-size(tablet) {
+      display: block;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+    #open-menu {
+      font-size: 32px;
+      cursor: pointer;
+      &.hide {
+        display: none;
+      }
+    }
+  }
+  .pc-menu {
+    position: relative;
+    margin-left: auto;
+    margin-right: 24px;
+    top: 6px;
+    display: block;
+    @include for-size(tablet) {
+      display: none;
+      margin-left: auto;
+    }
+    > ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      @include for-size(tablet) {
+        margin-right: 0px;
+      }
+      > li {
+        font-size: 16px;
+        text-align: center;
+        @include for-size(tablet) {
+          padding: 0 8px;
+        }
+        > a,span {
+          padding: 8px 24px;
+          display: block;
+          text-decoration: none;
+          font-weight: bold;
+          box-sizing: border-box;
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
+    }
+  }
+}
+/* container
+----------------------------------*/
+.container {
+  width: 80%;
+  margin: 0 auto;
+  @include for-size(phone-only) {
+  }
+}
+/* main
+----------------------------------*/
+main {
+  // width: 64%;
+  padding: 20px 0;
+  @include for-size(phone-only) {
+    width: 98%;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    input[type=text] {
+      margin-right: 5px;
+      background: $color-white;
+      border: none;
+      width: 70%;
+      padding: 9px 12px;
+      box-sizing: border-box;
+      color: $sub_color2;
+      font-size: 16px;
+    }
+    .btn {
+      border: none;
+      padding: 9px 12px;
+      cursor: pointer;
+      font-weight: bold;
+      &.add {
+        background: $sub_color2;
+        color: $color-white;
+        margin-left: 5px;
+      }
+    }
+  }
+  ul {
+    display: inline-block;
+    width: 100%;
+    margin-top: 30px;
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px 10px 2em;
+      font-size: 16px;
+      line-height: 1.5;
+      text-indent: -1.5em;
+      color: $text_color;
+      &:nth-child(odd) {
+        background-color: #c2d3ce;
+      }
+    }
+  }
 }
