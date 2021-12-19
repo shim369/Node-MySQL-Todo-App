@@ -16,9 +16,8 @@ router.get('/', function(req, res, next) {
     `select * from tasks;`,
     (error, results) => {
       console.log(error);
-      console.log(results);
       res.render('index', {
-        title: 'Node.js ToDo App',
+        title: 'Node Todo App',
         todos: results,
       });
     }
